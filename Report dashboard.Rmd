@@ -1,0 +1,96 @@
+---
+title: "Rate exchanges"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    Vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(DT)
+library(plotly)
+library(ggplot2)
+```
+
+# Taux de change USD/HTG a l'achat
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+ChartA
+ggplotly(ChartA)
+```
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+ChartB
+ggplotly(ChartB)
+```
+
+
+
+
+### Value Box
+
+```{r}
+valueBox(dim(c)[1], icon="fa-pencil")
+```
+# Taux de change USD/HTG a la vente
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Chart C
+
+```{r}
+ChartC
+ggplotly(ChartC)
+```
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Chart D
+
+```{r}
+ChartD
+ggplotly(ChartD)
+```
+### Value Box
+
+```{r}
+valueBox(dim(c)[1], icon="fa-pencil")
+```
+
+# Données BRH
+
+```{r}
+datatable(
+  c,
+  extensions = 'Buttons',
+  options = list(
+    dom = 'Bfrtip',
+    buttons = c('copy', 'print')
+  )
+)
+```
+
+
+
+Column {data-width=500}
+------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+Column {data-width=500}
+-------------------------------------------------------------------------
